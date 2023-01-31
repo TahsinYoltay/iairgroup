@@ -30,7 +30,6 @@ public class HomePageSteps {
 
     }
 
-
     @When("the user loads the home page")
     public void theUserLoadsTheHomePage() {
 
@@ -42,10 +41,6 @@ public class HomePageSteps {
     public void theHomePageShouldBeDisplayedCorrectlyWithAllTheElementsLoadedProperly() {
         homePage.checkCompanyLogoIsPresent();
     }
-
-//    @Given("the user navigates to https:\\/\\/www.iairgroup.com\\/")
-//    public void theUserNavigatesToHttpsWwwIairgroupCom() {
-//    }
 
     @When("the user click on our brands tab in the header")
     public void theUserClickOnOurBrandsTabInTheHeader() {
@@ -62,5 +57,28 @@ public class HomePageSteps {
         }
     }
 
+    @When("the user enters a search term {string} in the search bar")
+    public void the_user_enters_a_search_term_in_the_search_bar(String string) {
+        homePage.clickSearchIcon();
+        homePage.searchKeywords("British");
+        homePage.clickSearchButton();
+    }
 
+    @Then("the user should be able to see the search results page displaying the relevant results")
+    public void theUserShouldBeAbleToSeeTheSearchResultsPageDisplayingTheRelevantResults() {
+        Assert.assertEquals("Search results",homePage.getSearchResultTitle());
+    }
+
+
+    @When("the user selects a different language from the language dropdown")
+    public void theUserSelectsADifferentLanguageFromTheLanguageDropdown() {
+        homePage.clickLanguageDropDown();
+        homePage.changeLanguageByIndex(1);
+
+    }
+
+    @Then("the website should be displayed in the selected language")
+    public void theWebsiteShouldBeDisplayedInTheSelectedLanguage() {
+        Assert.assertEquals("El Grupo",homePage.getGroupButtonText());
+    }
 }
