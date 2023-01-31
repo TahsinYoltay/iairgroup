@@ -1,0 +1,5 @@
+#Environment set up for the test. Contain the URL expected
+api:
+  BaseURL: https://reqres.in/api
+webURL:
+  mainPage: https://www.iairgroup.com/
