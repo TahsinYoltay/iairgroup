@@ -3,7 +3,7 @@
 IAG Automation Framework Template 
 ==================================================================================
 
-Introduction:
+- Introduction:
 This project is a Java-based Automation Framework using Maven as a build tool, JUnit as a testing framework, BDD as a software development approach, Selenium for web automation, Page Object Modeling for a better design and structure, and Google Guice for Dependency Injection.
 
 Prerequisites
